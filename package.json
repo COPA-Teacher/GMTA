@@ -23,9 +23,11 @@
     "type": "module",
     "main": "server.js",
     "scripts": {
-        "dev": "tsx src/server.ts",
-        "build": "tsc && npm run copy:views",
+        "dev": "ts-node src/server.ts",
+        "build": "tsc && npm run copy:views && npm run copy:public",
+        "clean:build": "tsc -p tsconfig.build.json && npm run copy:views && npm run copy:public",
         "copy:views": "cp -r src/views dist/views",
+        "copy:public": "cp -r src/public dist/public",
         "test": "vitest run",
         "test:watch": "vitest",
         "test:coverage": "vitest run --coverage",
