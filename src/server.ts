@@ -1,7 +1,7 @@
 import express from 'express';
 
-const APP = express();
+const app = express();
 
-APP.listen(3737, () => {
+app.listen(3737, () => {
     console.log('runnign on port 3737');
 });
