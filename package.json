@@ -1,0 +1,28 @@
+{
+    "name": "gmta",
+    "version": "1.0.0",
+    "description": "Global Mock Test Application. Build for Students.",
+    "keywords": [
+        "GMTA",
+        "Mock",
+        "Test",
+        "Test",
+        "Exam",
+        "Preparation"
+    ],
+    "homepage": "https://github.com/fellowEngineer/GMTA#readme",
+    "bugs": {
+        "url": "https://github.com/fellowEngineer/GMTA/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fellowEngineer/GMTA.git"
+    },
+    "license": "ISC",
+    "author": "fellowEngineer",
+    "type": "module",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
+}
