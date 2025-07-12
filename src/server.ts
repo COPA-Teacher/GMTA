@@ -1,7 +1,6 @@
-import express from 'express';
+import App from './app.js';
+import AppConfig from './configs/app.config.js';
 
-const App = express();
-
-App.listen(3737, () => {
-    console.log('runnign on port 3737');
+App.listen(AppConfig.PORT || 3737, () => {
+    console.log(`GMTA : Server is running on port ${AppConfig.PORT || 3737}`);
 });
