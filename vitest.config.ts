@@ -1,4 +1,6 @@
 import { defineConfig } from 'vitest/config';
+import dotenv from 'dotenv';
+dotenv.config({ path: '.env.test' });
 
 export default defineConfig({
     test: {
@@ -32,6 +34,6 @@ export default defineConfig({
         },
 
         watch: false,
-        allowOnly: true, // warn if `.only` is committed
+        allowOnly: true,
     },
 });
