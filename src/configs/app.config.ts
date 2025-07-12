@@ -10,6 +10,9 @@ dotenv.config();
 const AppConfigValidation = AppConfigSchema.safeParse({
     PORT: process.env.PORT ? parseInt(process.env.PORT, 10) : 3737,
     NODE_ENV: process.env.NODE_ENV || 'Development',
+    IS_DEV: process.env.NODE_ENV === 'Development',
+    IS_PROD: process.env.NODE_ENV === 'Production',
+    IS_TEST: process.env.NODE_ENV === 'Test',
 });
 
 if (!AppConfigValidation.success) {
