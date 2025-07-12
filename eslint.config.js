@@ -1,4 +1,3 @@
-// eslint.config.js
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 import tseslint from 'typescript-eslint';
 import js from '@eslint/js';
@@ -39,9 +38,16 @@ export default [
                 {
                     selector: 'variable',
                     modifiers: ['const'],
+                    format: ['camelCase', 'PascalCase'],
+                },
+                {
+                    selector: 'import', // ✅ valid for Flat Config
+                    format: ['camelCase', 'PascalCase'],
+                },
+                {
+                    selector: 'typeLike',
                     format: ['PascalCase'],
                 },
-                { selector: 'typeLike', format: ['PascalCase'] },
                 {
                     selector: 'enumMember',
                     format: ['UPPER_CASE', 'snake_case'],
