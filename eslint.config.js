@@ -39,11 +39,13 @@ export default [
                 {
                     selector: 'variable',
                     modifiers: ['const'],
-                    types: ['boolean', 'string', 'number'],
-                    format: ['UPPER_CASE'],
+                    format: ['PascalCase'],
                 },
                 { selector: 'typeLike', format: ['PascalCase'] },
-                { selector: 'enumMember', format: ['UPPER_CASE'] },
+                {
+                    selector: 'enumMember',
+                    format: ['UPPER_CASE', 'snake_case'],
+                },
                 {
                     selector: 'classProperty',
                     modifiers: ['private'],
@@ -55,6 +57,10 @@ export default [
                     modifiers: ['private'],
                     format: ['camelCase'],
                     trailingUnderscore: 'require',
+                },
+                {
+                    selector: 'objectLiteralProperty',
+                    format: ['camelCase', 'snake_case', 'UPPER_CASE'],
                 },
             ],
         },

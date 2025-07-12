@@ -7,17 +7,17 @@ import { ConfigValidationError } from '../errors/configValidation.error.js';
 
 dotenv.config();
 
-const appConfigValidation = appConfigSchema.safeParse({
-    port: process.env.PORT ? parseInt(process.env.PORT, 10) : 3737,
-    nodeEnv: process.env.NODE_ENV || 'Development',
+const AppConfigValidation = appConfigSchema.safeParse({
+    PORT: process.env.PORT ? parseInt(process.env.PORT, 10) : 3737,
+    NODE_ENV: process.env.NODE_ENV || 'Development',
 });
 
-if (!appConfigValidation.success) {
-    throw new ConfigValidationError(appConfigValidation.error);
+if (!AppConfigValidation.success) {
+    throw new ConfigValidationError(AppConfigValidation.error);
 }
 
-type AppConfig = z.infer<typeof appConfigSchema>;
+type AppConfigType = z.infer<typeof appConfigSchema>;
 
-const appConfig: AppConfig = appConfigValidation.data;
+const AppConfig: AppConfigType = AppConfigValidation.data;
 
-export default appConfig;
+export default AppConfig;
