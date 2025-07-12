@@ -5,6 +5,9 @@ export const AppConfigSchema = z.object({
     NODE_ENV: z
         .enum(['Development', 'Production', 'Test'])
         .default('Development'),
+    IS_DEV: z.boolean().default(true),
+    IS_PROD: z.boolean().default(false),
+    IS_TEST: z.boolean().default(false),
 });
 
 export type AppConfig = z.infer<typeof AppConfigSchema>;
