@@ -50,7 +50,7 @@ A modern, production-ready Node.js (TypeScript) base project template, designed 
 ---
 
 ## 📁 Folder Structure
-
+```
 ├── src/
 │ ├── configs/
 │ │ └── appConfig.ts
@@ -67,7 +67,7 @@ A modern, production-ready Node.js (TypeScript) base project template, designed 
 ├── .eslintrc
 ├── tsconfig.json
 └── package.json
-
+```
 ---
 
 ## 🧰 Scripts
