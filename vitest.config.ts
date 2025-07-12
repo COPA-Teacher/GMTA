@@ -1,39 +1,15 @@
 import { defineConfig } from 'vitest/config';
 import dotenv from 'dotenv';
-dotenv.config({ path: '.env.test' });
+
+dotenv.config({ path: '.env.test', override: true });
 
 export default defineConfig({
     test: {
         globals: true,
         environment: 'node',
-
-        // Include both `.spec.ts` and `.test.ts` files
-        include: [
-            'src/**/*.spec.ts',
-            'src/**/*.test.ts',
-            'src/__tests__/**/*.ts',
-        ],
-
-        // Exclude common build/temp/output directories
-        exclude: [
-            '**/node_modules/**',
-            '**/dist/**',
-            '**/.{idea,git,cache,output,temp}/**',
-            '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*',
-        ],
-
+        include: ['src/**/*.test.ts', 'src/**/*.spec.ts'],
         coverage: {
             reporter: ['text', 'html'],
-            reportsDirectory: './coverage',
-            exclude: [
-                'src/types/**',
-                'src/configs/**',
-                '**/*.d.ts',
-                '**/__tests__/**/helpers/**',
-            ],
         },
-
-        watch: false,
-        allowOnly: true,
     },
 });
