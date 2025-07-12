@@ -1,3 +1,5 @@
 #!/bin/sh
 echo "Running pre-commit hook ..."
 npm run pre-commit
+echo "Running test hook ..."
+npm run test
